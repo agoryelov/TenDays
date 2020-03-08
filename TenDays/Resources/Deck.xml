@@ -68,8 +68,10 @@
   </Card>
   <Card>
     <CardType>Car</CardType>
-    <StateName></StateName>
-    <StateAbbr></StateAbbr>
+    <CardColor> </CardColor>
+  </Card>
+  <Card>
+    <CardType>Car</CardType>
     <CardColor> </CardColor>
   </Card>
   <Card>

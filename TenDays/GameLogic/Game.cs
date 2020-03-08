@@ -11,11 +11,13 @@ namespace TenDays.GameLogic
         public Board GameBoard { get; set; } = new Board();
         public int StartingPlayerIndex { get; set; }
         public int ActivePlayerIndex { get; set; }
+        public int Days { get; set; }
 
-        public Game(int playerCount, int startingPlayerIndex)
+        public Game(int playerCount, int startingPlayerIndex, int days)
         {
             InitPlayers(playerCount);
             StartingPlayerIndex = startingPlayerIndex;
+            Days = days;
         }
 
         public void Start()
@@ -25,7 +27,7 @@ namespace TenDays.GameLogic
 
             foreach (Player player in Players)
             {
-                player.DrawFrom(GameBoard.DrawPile, 5);
+                player.DrawFrom(GameBoard.DrawPile, Days);
             }
         }
 

@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using TenDays.GameLogic;
 
 namespace TenDays
 {
     class Program
     {
+        private const int DAYS = 5;
         private static string UserInput;
         private static Game TenDaysGame;
 
@@ -17,14 +17,19 @@ namespace TenDays
             UserInput = Console.ReadLine();
 
             var playerCount = int.Parse(UserInput);
-            TenDaysGame = new Game(playerCount, 0);
+            TenDaysGame = new Game(playerCount, 0, DAYS);
             TenDaysGame.Start();
 
             Console.WriteLine("\n\t\tBoard:");
             ConsolePrinter.PrintBoard(TenDaysGame.GameBoard);
 
+            Console.WriteLine();
+
             Console.WriteLine("\n\t\tYour Hand:");
             ConsolePrinter.PrintCards(TenDaysGame.Players[0].Cards);
+
+            Console.WriteLine();
+            ConsolePrinter.PrintTray(DAYS);
         }
     }
 }

@@ -80,7 +80,7 @@ namespace TenDays
             PrintCards(boardCards);
         }
 
-        private static void PrintCard(string cardText, string cardColor)
+        public static void PrintCard(string cardText, string cardColor)
         {
             var sb = new StringBuilder();
             sb.AppendLine(" _____");
@@ -89,6 +89,20 @@ namespace TenDays
             sb.AppendLine("| " + cardText + "  |");
             sb.AppendLine("|     |");
             sb.AppendLine("|____" + cardColor + "|");
+
+            Console.WriteLine(sb.ToString());
+        }
+
+        public static void PrintTray(int dayCount)
+        {
+            var sb = new StringBuilder();
+            var space = new string(' ', SPACE_BETWEEN_CARDS);
+
+            for (int dayIndex = 1; dayIndex <= dayCount; dayIndex++)
+            {
+                sb.Append(" Day " + dayIndex + " ");
+                sb.Append(space);
+            }
 
             Console.WriteLine(sb.ToString());
         }
